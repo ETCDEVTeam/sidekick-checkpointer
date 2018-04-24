@@ -52,7 +52,7 @@ function assertCheckpoint(blockNumber) {
   // var jsonstring = JSON.stringify(json);
 
   // for demo purposes just write block hash to console log, which goes to stdout.
-  // this can then be captured by the "sidecar" mainnet-liason application
+  // this can then be captured by the "sidecar" liaison application
   console.log(block.hash);
 }
 
@@ -94,5 +94,5 @@ function checkpointHandler(onSuccess, onFail) {
 }
 
 checkpointHandler(assertCheckpoint, function onError(blockNumber) {
-  debug.setHead(blockNumber - checkpointInterval);
+  debug.setHead(blockNumber - 2*checkpointInterval);
 });
